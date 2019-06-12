@@ -2,7 +2,7 @@
 
 > Bibliographie "Behavior Tree"
 
-## Auteurs
+# Auteurs
 
 - Antoine Madec
 - Florian Lucas
