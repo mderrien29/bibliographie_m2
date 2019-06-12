@@ -1,17 +1,12 @@
-<<<<<<< HEAD
-
-\documentclass{scrbook}
-\title{How hard would it be to build a spaceship from scrap}
-\author{Carl Capybara\thanks{I never procrastinate} \and Walter Wombat}
-\subtitle{A closer look at the expenses}
-\subject{a funny paper}
-\begin{document}
-	\maketitle
-	\addchap{Introduction}
-\end{document}
-=======
 % !TXS template
 \documentclass[titlepage]{article}
+\usepackage{color}   %May be necessary if you want to color links
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true, %set true if you want colored links
+	linktoc=all,     %set to all if you want both sections and subsections linked
+	linkcolor=blue,  %choose some color if you want links to stand out
+}
 \title{Arbre comportementaux pour le contr\^ole de mission}
 \author{
 	Derrien Martial \\
@@ -19,10 +14,21 @@
 	Madec Antoine \\
 	\and
 	Lucas Florian
-	}
+}
+\date{Juin 2019}
+\renewcommand{\contentsname}{Sommaire} 
 \begin{document}
 	\maketitle
-	Ola Ceci est un article
-	https://sites.google.com/site/technovhugogassinc36fg5/la-robotique-actuelle
+	\tableofcontents
+	\hypersetup{linktocpage}
+	\part{Introduction}
+	\part{Les grands domaines d'emploi des behaviors tree}
+	\section{Structure}
+	This section's content...
+	\paragraph{ceci est un paragraphe}	
+	\subsection{Top Matter}
+	This subsection's content...
+	
+	\subsubsection{Article Information}
+	This subsubsection's content...
 \end{document}
->>>>>>> master
