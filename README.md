@@ -7,3 +7,11 @@
 - Antoine Madec
 - Florian Lucas
 - Martial Derrien
+
+# tuto git
+
+`git add .`
+
+`git commit -m "message"`
+
+`git push`
