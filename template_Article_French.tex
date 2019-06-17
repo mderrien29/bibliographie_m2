@@ -105,7 +105,7 @@
 		\subsection{industrie}
 		\paragraph{Exemple}
 		\begin{figure}[h!]
-			\includegraphics[width=\linewidth]{img/robotind.jpg}
+			\includegraphics[width=\linewidth]{img/robotind.JPG}
 			\caption{The CoSTAR project}
 			\label{fig:civil}
 		\end{figure}
@@ -129,9 +129,59 @@
 		Cependant, une considération plus naturelle consiste à attacher le poids aux nœuds enfants. Les sélecteurs cochent leurs nœuds enfants conformément aux poids de haut en bas. Cependant, cela implique d'ajuster manuellement les valeurs de pondération pour le système. Ce qui implique beaucoup de main-d'œuvre et de ressources : c'est une tâche très compliquée et très lourde, pas vraiment immaginable sur un très gros projet. \cite{Fu2016/08}
 		\\
 		Une solution serait donc d'utiliser l'apprentissage machine (machine learning) afin de faire ajuster ces valeurs automatiquement.
-	
 	\clearpage
 	\section{Exemple d'implémentation}
+	Pour notre exemple d'intégration, nous allons créer l'arbre comportemental d'un robot civil. Sa mission sera de remplacer les étudiants ayant du mal a se lever pour aller en cours. On ne s'intéressera pas à la conception (ni à la faisabilité) du dis robot, mais simplement la modélisation de son comportement. 
+	\\
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=50px]{img/BT_1.png}
+		\caption{Nous utiliserons les symboles suivants pour modéliser notre BT}
+		\label{fig:exemple_1}
+	\end{figure}
+	\\
+	Tout d'abord, nous modélisons les blocs principaux du comportement, les trois phases de la mission du robot.
+	\begin{enumerate}
+		\item Phase de démarrage
+		\item Journée de cours
+		\item Arret
+	\end{enumerate}
+	En partant de ces 3 séquences, nous avons modélisé un arbre :
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=\linewidth]{img/BT_2.png}
+		\caption{Arbre après modélisation sommaire}
+		\label{fig:exemple_2}
+	\end{figure}
+	L'une des forces des BT est la possibilité de modéliser les parties d'un arbre séparéments. Nous avons donc décider de s'attribuer chacun une partie différente.
+	\\
+	\paragraph{Démarrage}
+	C'est l'arbre de démarrage, qui est executé au départ du robot. Pour éviter que le robot parte en cours en même temps que l'élève, il a été décidé d'ajouter une validation manuelle. Pour aussi éviter que le robot ne parte avec un faible niveau de batterie, et se retrouve bloqué, on ajoute aussi une condition de démarrage.
+	\paragraph{Journée}
+	C'est l'arbre principal du robot. Il décrit le comportement pendant la journée. C'est son arbre de mission. Il comporte une référence à l'action "aller en cours", qui sera décrit plus tard.
+	\paragraph{Arrêt}
+	Cet arbre est très simple pour nous. Il ordonne au robot de retourner à sa base, son poste de stockage ou de rechargement.
+	\\
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=\linewidth]{img/BT_4.png}
+		\caption{Arbre après modélisation des arbres principaux}
+		\label{fig:exemple_3}
+	\end{figure}
+	\paragraph{Aller en cours}
+	Cet arbre est l'arbre le plus important du comportement, car il décrit la partie la plus sensible de la mission du robot.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=\linewidth]{img/BT_5.png}
+		\caption{Arbre "Aller en cours"}
+		\label{fig:exemple_4}
+	\end{figure}
+	\\
+	Pour modéliser le comportement, nous avons fait appel à des "décorateurs", des noeuds qui modifient simplement la réponses du reste de l'arbre mais éxécutent quand même leur propre arbre. 
+	\\
+	Par exemple, le décorateur "BUSY" force l'abre inférieur à toujours répondre BUSY, ce qui permet au robot de ne pas éxecuter le reste de l'arbre. Il est utilisé s
+	\\
+	Nous avons aussi ajouté un arbre "changer de salle", qui est totalement optionel. Il  évalue quand même son arbre mais finit toujours par répondre "TRUE" ou succès car son éxecution n'est pas requise systématiquement.
 	
 	\clearpage
 	\section{bibliographie}
