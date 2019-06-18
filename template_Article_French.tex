@@ -48,7 +48,7 @@
 	\section{Qu'est-ce-qu'un behavior tree ?}
 		\subsection{Définition}
 		Un arbre de comportement est un modèle mathématique d'exécution de plans utilisé en informatique, en robotique, en systèmes de contrôle et dans les jeux vidéo. Ils décrivent les basculements entre un ensemble fini de tâches de manière modulaire. Leur force provient de leur capacité à créer des tâches très complexes composées de tâches simples, sans se soucier de la façon dont les tâches simples sont mises en œuvre. \cite{wikipedia_BT}
-		\subsection{fonctionnement}
+		\subsection{Fonctionnement}
 		
 		D'un point de vue conceptuel, un BT est basé sur deux objets clés : le nœud et l'arborescence.
 		
@@ -68,27 +68,25 @@
 		\paragraph{Arborescence}
 		Les comportements sont élaborés en construisant des arborescences de nœuds, collections de tâches individuelles qui, lorsqu'elles sont positionnées comme une racine avec des branches qui se terminent par des feuilles, définissent la façon dont un agent intelligent se comportera en réponse à une entrée. \cite{documentation_aws}	
 		\subsection{Behavior Tree face à FSM et HFSM}
-		Une machine à états finis (FSM) est un modèle mathématique de calcul. C'est une machine abstraite qui peut se trouver exactement dans un nombre fini d'états à un moment donné. Le FSM peut passer d'un état à un autre en réponse à certaines entrées externes; le passage d'un état à un autre s'appelle une transition. Un FSM est défini par une liste de ses états, son état initial et les conditions de chaque transition.
+		Une machine à états finis (FSM) est un modèle mathématique de calcul. C'est une machine abstraite qui peut se trouver exactement dans un nombre fini d'états à un moment donné. Le FSM peut passer d'un état à un autre en réponse à certaines entrées externes; le passage d'un état à un autre s'appelle une transition. Un FSM est défini par une liste de ses états, son état initial et les conditions de chaque transition. \cite{wikipedia_FSM}
 		\\
-		D'un point de vue théorique, chaque exécution décrite par un BT peut être décrite par un FSM et inversement. Toutefois, en raison du nombre de transitions, l'utilisation d'un FSM en tant qu'architecture de contrôle n'est pas pratique pour certaines applications robotiques. De plus, un FSM suppose que les propositions qui déclenchent les transitions sortantes à partir du même état s’excluent mutuellement. Une fois mises en œuvre, les propositions sont vérifiées régulièrement en un temps discret. Il existe donc une probabilité que deux propositions ou plus se tiennent simultanément après un cycle. Pour résoudre ce problème, il faut redéfinir la signification de certaines transitions, afin de les rendre mutuellement exclusives. Un FSM de ce format est peu pratique à concevoir pour les humains et les ordinateurs. Ajouter et supprimer des comportements humains est sujet à des erreurs. Après avoir ajouté un nouvel état, chaque transition existante doit être réévaluée et les nouvelles transitions vers le nouvel état doivent également être évaluées. Un grand nombre de transitions rend tout processus automatisé d'analyse ou de synthèse coûteux en FSM.
+		D'après \cite{colledanchise_2017} et ses références d'un point de vue théorique, chaque exécution décrite par un BT peut être décrite par un FSM et inversement. Toutefois, en raison du nombre de transitions, l'utilisation d'un FSM en tant qu'architecture de contrôle n'est pas pratique pour certaines applications robotiques. De plus, un FSM suppose que les propositions qui déclenchent les transitions sortantes à partir du même état s’excluent mutuellement. Une fois mises en œuvre, les propositions sont vérifiées régulièrement en un temps discret. Il existe donc une probabilité que deux propositions ou plus se tiennent simultanément après un cycle. Pour résoudre ce problème, il faut redéfinir la signification de certaines transitions, afin de les rendre mutuellement exclusives. Un FSM de ce format est peu pratique à concevoir pour les humains et les ordinateurs. Ajouter et supprimer des comportements humains est sujet à des erreurs. Après avoir ajouté un nouvel état, chaque transition existante doit être réévaluée et les nouvelles transitions vers le nouvel état doivent également être évaluées. Un grand nombre de transitions rend tout processus automatisé d'analyse ou de synthèse coûteux en FSM.
 		\\
-		Les marchines à états finis hierarchique (HFSM) sont les autorités de certification les plus similaires aux BT en termes d'objectif et d'expressivité. Pour comparer les BT aux HFSM, veuillez vous référer à \cite{colledanchise_2017}. Une différence importante est que, dans les HFSM, chaque couche de la hiérarchie doit être ajoutée explicitement, alors que dans les BT, chaque sous-arbre peut être vu comme un module à part entière.
-		\subsection{historique}
-			Les BT sont apparuent dans l'industrie des jeux vidéos car les FSM deviennent de plus en plus difficiles à déboguer. Damian Isla a expliqué cela en détail à propos de l’intelligence artificielle de Halo 2 lors de son exposé sur la GDC en 2005. \cite{gdc_2005}
+		Les marchines à états finis hierarchique (HFSM) sont les autorités de certification les plus similaires aux BT en termes d'objectif et d'expressivité. Pour comparer les BT aux HFSM, veuillez vous référer aux schémas 3.8 et 3.9 de \cite{colledanchise_2017}. Une différence importante est que, dans les HFSM, chaque couche de la hiérarchie doit être ajoutée explicitement, alors que dans les BT, chaque sous-arbre peut être vu comme un module à part entière.
+		\subsection{Historique}
+			Les BT ont été développés dans l’industrie du jeu vidéo, en tant qu’outil pour accroître la modularité des structures de contrôle des PNJ. Dans cette industrie valant des milliards de dollars, la modularité est une propriété essentielle pour permettre la réutilisation du code, la conception incrémentielle des fonctionnalités et des tests efficaces. Les FSM deviennent de plus en plus difficiles à déboguer d'où l'apparition des BT. Damian Isla a expliqué cela en détail à propos de l’intelligence artificielle de Halo 2 lors de son exposé sur la GDC en 2005. \cite{gdc_2005}
 			\\
 			\begin{figure}[h!]
 				\includegraphics[width=\linewidth]{img/halo2.jpg}
-				\caption{Le jeu vidéo Halo2, un précurseur en matière d'intelligence artificielle dans le jeu vidéo grâce à son utilisation des BT \cite{wikipedia_halo}}
+				\caption{Le jeu vidéo Halo 2, un précurseur en matière d'intelligence artificielle dans le jeu vidéo grâce à son utilisation des BT \cite{wikipedia_halo}}
 				\label{fig:BT1}
 			\end{figure}
 			\\
-			Pour atténuer certains de ces problèmes, les FSM ont évolué en structures hiérarchiques facilitant la conception et le débogage. L'idée des hiérarchies étend la capacité de gérer de nombreux États, mais ne supprime pas le problème selon lequel, tôt ou tard, les FSM deviennent ingérables à mesure qu'ils grandissent en taille et en complexité.
+			Suite au développement de l'industrie du jeu vidéo, les BT ont également commencé à attirer l'attention du monde universitaire.
 			\\
-			Unreal Engine a une belle implémentation d'arborescence de comportement qui sert de référence pour les arborescences de comportement dans l'IA du jeu.
-			Les BT fournissent dans de nombreux cas un cadre pour la conception d'IA plus compréhensibles et plus faciles à lire que les FSM hiérarchiques. En outre, l’arbre bien organisé facilite le débogage visuel dans la pratique.
-		
-
-	
+			À la Carnegie Mellon University, les BT ont été largement utilisés pour la manipulation robotique. La modularité est la principale raison de l'utilisation des BT. "L'avantage principal est que les comportements individuels peuvent facilement être réutilisés dans le contexte d'un autre comportement de niveau supérieur, sans qu'il soit nécessaire de spécifier leur relation avec les événements ultérieurs. comportements".\cite{Bagnell_2012_7606}
+			\\
+			D'après \cite{colledanchise_2017} et ses références, les BT ont également été utilisés pour permettre à des non-experts d’effectuer une programmation robotisée des opérations de sélection et d’emplacement, grâce à leur représentation modulaire et adaptable d’une tâche robotique. Ils ont également permis aux utilisateurs finaux de créer visuellement des programmes aussi complexes et puissant en tant que programmes écrits de manière traditionnelle. De plus, les BT ont été proposés comme composant clé de la robotique de chirurgie cérébrale en raison de "leur flexibilité, leur réutilisabilité et leur syntaxe simple".\cite{hu_gong_hannaford_seibel_2015}
 	\clearpage
 	\section{Les behavior tree en robotique}
 		\subsection{Civil}
@@ -120,8 +118,13 @@
 	
 	\clearpage
 	\section{Les outils implémentant les behavior trees}
-		En examinant les logiciels disponibles pour la conception et l'exécution de FSM et de BT, nous constatons que les outils du côté FSM, tels que IBM Rhapsody 2 et Stateflow 3, sont beaucoup plus avancés. Néanmoins, de nombreuses plates-formes de développement de jeux informatiques, telles que Unity3d 4 et Unreal Engine 5, disposent désormais d'outils permettant de travailler avec des BT. Pour ceux qui souhaitent mettre en œuvre leur propre cadre, nous notons que la mise en œuvre standard des FSM est assez simple, alors que les HFSM et les BT nécessitent davantage de considération. Cependant, les implémentations open source sont disponibles pour les deux.
 		\subsection{outils utilisés}
+			En examinant les logiciels disponibles pour la conception et l'exécution de FSM et de BT, nous constatons que les outils du côté FSM, tels que IBM Rhapsody 2 et Stateflow 3, sont beaucoup plus avancés. Néanmoins, de nombreuses plates-formes de développement de jeux informatiques, telles que Unity3d 4\cite{technologies} et Unreal Engine 5 \cite{unreal_engine}, disposent désormais d'outils permettant de travailler avec des BT. Pour ceux qui souhaitent mettre en œuvre leur propre cadre, nous notons que la mise en œuvre standard des FSM est assez simple, alors que les HFSM et les BT nécessitent davantage de considération. Cependant, les implémentations open source sont disponibles pour les deux.
+			\\
+			ROS est un de ces outils open source utilisé pour le développement de BT.
+			La bibliothèque est accessible au public sur \cite{ros.org} et le référentiel de développeur est disponible sur \cite{miccol_2018_dev}. Une version non ROS de la bibliothèque en C ++ est disponible à l'adresse \cite{miccol_2018}. La bibliothèque est actuellement l’implémentation de ROS BT la plus étoilée disponible dans GitHub.
+			\\
+			Le but de cette bibliothèque est d’offrir un paquetage ROS BT open source gratuit. L'utilisateur définit la structure arborescente et développe le code des leaf nodes pour leur exécution et leur préemption. Les leaf nodes peuvent être implémentés dans le même node ROS que l'arborescence principale ou en tant que node ROS externes. Les node ROS externes peuvent être implémentés à l'aide de C++ ou de Python.
 		\subsection{outils incomplet}
 		\subsection{machine learning}
 		Dans la définition originale de l’arbre de comportement, les sélecteurs choisiront l’un de leurs nœuds-enfants à valider. L’algorithme parcourant l'arbre de gauche à droite pour trouver le premier des noeuds pouvant être activé donne aux noeuds de gauche les poids les plus élevés. \cite{Fu2016/08}
@@ -183,6 +186,8 @@
 	\\
 	Nous avons aussi ajouté un arbre "changer de salle", qui est totalement optionel. Il  évalue quand même son arbre mais finit toujours par répondre "TRUE" ou succès car son éxecution n'est pas requise systématiquement.
 	
+	\clearpage
+	\section{conclusion}
 	\clearpage
 	\section{bibliographie}
 	\bibliographystyle{plain}
