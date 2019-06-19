@@ -91,7 +91,9 @@
 			D'après Colledanchise \cite{colledanchise_2017}, les BT ont également été utilisés pour permettre à des non-experts d’effectuer une programmation robotisée des opérations de sélection et d’emplacement, grâce à leur représentation modulaire et adaptable d’une tâche robotique. Ils ont également permis aux utilisateurs finaux de créer visuellement des programmes aussi complexes et puissant en tant que programmes écrits de manière traditionnelle. De plus, les BT ont été proposés comme composant clé de la robotique de chirurgie cérébrale en raison de "leur flexibilité, leur réutilisabilité et leur syntaxe simple".\cite{hu_gong_hannaford_seibel_2015}
 	\clearpage
 	\section{Les behavior tree en robotique}
+			Un arbre de comportement (Behavior Tree) est un moyen de structurer la commutation entre différentes tâches dans un système autonome, comme une entité virtuelle dans un jeu vidéo ou un robot. Les BT sont un moyen très efficace de créer des systèmes complexes qui sont à la fois modulaires et réactifs. Ces propriétés sont cruciales dans de nombreuses applications, ce qui a conduit à la propagation de BT de la programmation en robotique. Chaque domaine de la robotique, c'est-à-dire le civil, l'industrie, la santé et le militaire, à la possibilité d'utiliser les behavior tree pour différents types de systèmes.  
 		\subsection{Civil}
+		De plus en plus de tâches sont confiées aux robots. Ils servent à remplacer les personnes qui sont chargées de taches civiles ( Nettoyer la ville, aider la population, s'occuper des lieux publics, déplacer des charges lourdes...)
 		\paragraph{Exemple}
 		\begin{figure}[h!]
 			\includegraphics[width=\linewidth]{img/vehicul.jpg}
@@ -100,9 +102,10 @@
 		\end{figure}	
 		iQmatic \cite{kth} est un projet dirigé par Scania (constructeur de camions haut de gamme) qui vise à développer un véhicule (camion, autobus, etc.) pour le transport de marchandises, l’exploitation minière et d’autres applications industrielles. 
 		\\
-		Le logiciel du véhicule doit être réutilisable, maintenable et facile à développer. Pour ces raisons, les développeurs d’iQmatic ont choisi BT comme architecture de contrôle pour le projet.
+		Le logiciel du véhicule doit être réutilisable et facile à développer. Pour ces raisons, les développeurs d’iQmatic ont choisi BT comme architecture de contrôle pour le projet.
 		Les BT sont appréciés dans iQmatic pour leur lisibilité humaine, qui supportent la conception et le développement des premiers prototypes. La figure 4 montre un des camions utilisés dans le banc d’essai iQmatic
 		\subsection{Industrie}
+		Le premier but des robots est de remplacer l’homme dans des activités difficiles et fatigantes pour l’employeur. Les robots ont commencé à être utilisés dans les chaînes d’assemblage industrielles. Dans ces chaînes d’assemblage, on retrouve des robots soudeurs, manipulateurs, peintres...
 		\paragraph{Exemple}
 		\begin{figure}[h!]
 			\includegraphics[width=\linewidth]{img/robotAma.JPG}
@@ -115,11 +118,13 @@
 		L'équipe KTH a utilisé BT dans les deux éditions (2015 et
 		2016). Les BT ont été appréciés pour leur modularité et leur réutilisation de code, ce qui a permis l’intégration de fonctionnalités différentes développées par les programmeurs avec différent styles de codage.
 		\subsection{Santé}
+		Les robots commencent à être de plus en plus dans le domaine médical. Ces robots ne sont pas complètement autonomes mais ils assistent les médecins ou chirurgiens, jusqu'à permettre des opérations médicales à distance.  Cette pratique de chirurgie assistée est émergente donc bien que peu répandue, elle est en phase de devenir la chirurgie du futur.
 		
 		L’utilisation de la thérapie assistée par robot (RAT) dans les interventions de soins de santé a de plus en plus attiré l’attention de la recherche. Cependant, beaucoup d’études RAT sont menées sous les techniques du Magicien d’Oz (Woz) dans lesquelles les robots sont téléopérés ou préprogrammés. La tendance du RAT se déplace vers (partiellement) le contrôle autonome dans lequel l’architecture de contrôle du comportement des robots joue un rôle important dans la création d’une interaction humaine-robot efficace en engageant et en motivant les utilisateurs humains dans les processus thérapeutiques. \cite{rat} 
 		Cela pourrait par exemple permettre un gain de temps dans les hôpitaux. 
 	
 		\subsection{militaire}
+		Les robots sont de plus en plus utilisés dans le domaine militaire. Aujourd’hui on peut plus facilement créer des robots discrets et dotés de nombreux capteurs, ce qui est idéal pour des missions d’espionnage ou d’éclairement.
 	Il est dificile de trouver des exemples d'applications sur drones militaires \cite{mer_et_marine_2018}.
 
 	\section{Les outils implémentant les behavior trees}
