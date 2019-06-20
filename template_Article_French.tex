@@ -35,7 +35,7 @@
 	technique permettant de structurer le passage d'une tâche à une autre dans 
 	le cadre de l'automatisation de ce comportement.
 	\\
-	Cette technique, d'abord utilisé pour programmer le comportement de personnages non joueurs (NPC) dans les jeux vidéos \cite{wikipedia_BT}, est maintenant l'une des techniques les plus en vogue pour la programmation de robot autonome ou semi-autonome\cite{ros.org}.
+	Cette technique, d'abord utilisée pour programmer le comportement de personnages non joueurs (NPC) dans les jeux vidéos \cite{wikipedia_BT}, est maintenant l'une des techniques les plus en vogue pour la programmation de robot autonome ou semi-autonome\cite{ros.org}.
 	\\
 	\begin{figure}[h!]
 		\includegraphics[width=\linewidth]{img/videogame_tree.jpg}
@@ -49,7 +49,7 @@
 	
 	\section{Qu'est-ce-qu'un behavior tree ?}
 		\subsection{Définition}
-		Un arbre de comportement est un modèle mathématique d'exécution de plans utilisé en informatique, en robotique, en systèmes de contrôle et dans les jeux vidéo. Ils décrivent les basculements entre un ensemble fini de tâches de manière modulaire. Leur force provient de leur capacité à créer des tâches très complexes composées de tâches simples, sans se soucier de la façon dont les tâches simples sont mises en œuvre. \cite{wikipedia_BT}
+		Un arbre de comportement est un modèle mathématique d'exécution de plans utilisés en informatique, en robotique, en système de contrôle et dans les jeux vidéo. Ils décrivent les basculements entre un ensemble fini de tâches de manière modulaire. Leur force provient de leur capacité à créer des tâches très complexes composées de tâches simples, sans se soucier de la façon dont les tâches simples sont mises en œuvre. \cite{wikipedia_BT}
 		\subsection{Fonctionnement}
 		
 		D'un point de vue conceptuel, un BT est basé sur deux objets clés : le nœud et l'arborescence.
@@ -61,7 +61,7 @@
 		\end{figure}
 		
 		\paragraph{Nœud}
-		Le nœud est le concept le plus fondamental ici. il s'agit d'un bloc de construction qui peut être associé à d'autres pour construire des comportements. Un nœud se compose d'un bloc de code qui représente une tâche simple. Tous les nœuds ont la même interface : lors de leur traitement, ils effectuent une tâche et peuvent réussir ou échouer.
+		Le nœud est le concept le plus fondamental ici. il s'agit d'un bloc de construction qui peut être associé à d'autres pour construire des comportements. Un nœud se compose d'un bloc de codes qui représentent une tâche simple. Tous les nœuds ont la même interface : lors de leur traitement, ils effectuent une tâche et peuvent réussir ou échouer.
 		
 		Les nœuds peuvent être autonomes ou avoir des nœuds enfants, lesquels sont traités dans le cadre du traitement du nœud parent. Lors du traitement, la réussite d'un nœud parent dépend souvent (mais pas toujours) de la réussite de chaque nœud enfant.
 		
@@ -86,12 +86,12 @@
 			\\
 			Suite au développement de l'industrie du jeu vidéo, les BT ont également commencé à attirer l'attention du monde universitaire.
 			\\
-			À la Carnegie Mellon University, les BT ont été largement utilisés pour la manipulation robotique. La modularité est la principale raison de l'utilisation des BT. "L'avantage principal est que les comportements individuels peuvent facilement être réutilisés dans le contexte d'un autre comportement de niveau supérieur, sans qu'il soit nécessaire de spécifier leur relation avec les événements ultérieurs. comportements".\cite{Bagnell_2012_7606}
+			À la Carnegie Mellon University, les BT ont été largement utilisés pour la manipulation robotique. La modularité est la principale raison de l'utilisation des BT. "L'avantage principal est que les comportements individuels peuvent facilement être réutilisés dans le contexte d'un autre comportement de niveau supérieur, sans qu'il soit nécessaire de spécifier leur relation avec les événements ultérieurs.".\cite{Bagnell_2012_7606}
 			\\
-			D'après Colledanchise \cite{colledanchise_2017}, les BT ont également été utilisés pour permettre à des non-experts d’effectuer une programmation robotisée des opérations de sélection et d’emplacement, grâce à leur représentation modulaire et adaptable d’une tâche robotique. Ils ont également permis aux utilisateurs finaux de créer visuellement des programmes aussi complexes et puissant en tant que programmes écrits de manière traditionnelle. De plus, les BT ont été proposés comme composant clé de la robotique de chirurgie cérébrale en raison de "leur flexibilité, leur réutilisabilité et leur syntaxe simple".\cite{hu_gong_hannaford_seibel_2015}
+			D'après Colledanchise \cite{colledanchise_2017}, les BT ont également été utilisés pour permettre à des non-experts d’effectuer une programmation robotisée des opérations de sélection et d’emplacement, grâce à leur représentation modulaire et adaptable d’une tâche robotique. Ils ont également permis aux utilisateurs finaux de créer visuellement des programmes aussi complexes et puissants en tant que programmes écrits de manière traditionnelle. De plus, les BT ont été proposés comme composant clé de la robotique de chirurgie cérébrale en raison de "leur flexibilité, leur réutilisabilité et leur syntaxe simple".\cite{hu_gong_hannaford_seibel_2015}
 	\clearpage
 	\section{Les behavior tree en robotique}
-			Un arbre de comportement (Behavior Tree) est un moyen de structurer la commutation entre différentes tâches dans un système autonome, comme une entité virtuelle dans un jeu vidéo ou un robot. Les BT sont un moyen très efficace de créer des systèmes complexes qui sont à la fois modulaires et réactifs. Ces propriétés sont cruciales dans de nombreuses applications, ce qui a conduit à la propagation de BT de la programmation en robotique. Chaque domaine de la robotique, c'est-à-dire le civil, l'industrie, la santé et le militaire, à la possibilité d'utiliser les behavior tree pour différents types de systèmes.  
+			Un arbre de comportement (Behavior Tree) est un moyen de structurer la commutation entre différentes tâches dans un système autonome, comme une entité virtuelle dans un jeu vidéo ou un robot. Les BT sont un moyen très efficace de créer des systèmes complexes qui sont à la fois modulaires et réactifs. Ces propriétés sont cruciales dans de nombreuses applications, ce qui a conduit à la propagation de BT dans la programmation robotique. Chaque domaine de la robotique, c'est-à-dire le civil, l'industrie, la santé et le militaire, à la possibilité d'utiliser les BT pour différents types de systèmes.  
 		\subsection{Civil}
 		De plus en plus de tâches sont confiées aux robots. Ils servent à remplacer les personnes qui sont chargées de taches civiles ( Nettoyer la ville, aider la population, s'occuper des lieux publics, déplacer des charges lourdes...)
 		\paragraph{Exemple}
@@ -105,7 +105,7 @@
 		Le logiciel du véhicule doit être réutilisable et facile à développer. Pour ces raisons, les développeurs d’iQmatic ont choisi BT comme architecture de contrôle pour le projet.
 		Les BT sont appréciés dans iQmatic pour leur lisibilité humaine, qui supportent la conception et le développement des premiers prototypes. La figure 4 montre un des camions utilisés dans le banc d’essai iQmatic
 		\subsection{Industrie}
-		Le premier but des robots est de remplacer l’homme dans des activités difficiles et fatigantes pour l’employeur. Les robots ont commencé à être utilisés dans les chaînes d’assemblage industrielles. Dans ces chaînes d’assemblage, on retrouve des robots soudeurs, manipulateurs, peintres...
+		Le premier but des robots est de remplacer l’homme dans des activités difficiles et fatigantes pour l’employeur. Les robots ont commencés à être utilisés dans les chaînes d’assemblage industrielles. Dans ces chaînes d’assemblage, on retrouve des robots soudeurs, manipulateurs, peintres...
 		\paragraph{Exemple}
 		\begin{figure}[h!]
 			\includegraphics[width=\linewidth]{img/robotAma.JPG}
@@ -116,15 +116,15 @@
 		On demande aux robots de récupérer de façon autonome une vaste gamme de produits sur une tablette et de les mettre dans un bac. Le défi a été conçu dans le but de renforcer les liens entre la recherche robotique industrielle et universitaire et également de promouvoir des solutions communes à certains problèmes ouverts dans l’automatisation non structurée.
 		\\
 		L'équipe KTH a utilisé BT dans les deux éditions (2015 et
-		2016). Les BT ont été appréciés pour leur modularité et leur réutilisation de code, ce qui a permis l’intégration de fonctionnalités différentes développées par les programmeurs avec différent styles de codage.
+		2016). Les BT ont été appréciés pour leur modularité et leur réutilisation de code, ce qui a permis l’intégration de fonctionnalités différentes développées par les programmeurs avec différents styles de codage.
 		\subsection{Santé}
-		Les robots commencent à être de plus en plus dans le domaine médical. Ces robots ne sont pas complètement autonomes mais ils assistent les médecins ou chirurgiens, jusqu'à permettre des opérations médicales à distance.  Cette pratique de chirurgie assistée est émergente donc bien que peu répandue, elle est en phase de devenir la chirurgie du futur.
+		Les robots commencent à être de plus en plus utilisés dans le domaine médical. Ces robots ne sont pas complètement autonomes mais ils assistent les médecins ou chirurgiens, jusqu'à permettre des opérations médicales à distance.  Cette pratique de chirurgie assistée est émergente donc bien que peu répandue, elle est en phase de devenir la chirurgie du futur.
 		
 		L’utilisation de la thérapie assistée par robot (RAT) dans les interventions de soins de santé a de plus en plus attiré l’attention de la recherche. Cependant, beaucoup d’études RAT sont menées sous les techniques du Magicien d’Oz (Woz) dans lesquelles les robots sont téléopérés ou préprogrammés. La tendance du RAT se déplace vers (partiellement) le contrôle autonome dans lequel l’architecture de contrôle du comportement des robots joue un rôle important dans la création d’une interaction humaine-robot efficace en engageant et en motivant les utilisateurs humains dans les processus thérapeutiques. \cite{rat} 
 		Cela pourrait par exemple permettre un gain de temps dans les hôpitaux. 
 	
 		\subsection{militaire}
-		Les robots sont de plus en plus utilisés dans le domaine militaire. Aujourd’hui on peut plus facilement créer des robots discrets et dotés de nombreux capteurs, ce qui est idéal pour des missions d’espionnage ou d’éclairement.
+		Les robots sont de plus en plus utilisés dans le domaine militaire. Aujourd’hui on peut plus facilement créer des robots discrets et dotés de nombreux capteurs, ce qui est idéal pour des missions d’espionnage ou de reconnaissance.
 	Il est dificile de trouver des exemples d'applications sur drones militaires \cite{mer_et_marine_2018}.
 
 	\section{Les outils implémentant les behavior trees}
@@ -134,9 +134,9 @@
 			ROS est un de ces outils open source utilisé pour le développement de BT.
 			La bibliothèque est accessible au public sur le site de ros \cite{ros.org} et le référentiel de développeur est disponible sur le github \cite{miccol_2018_dev}. Une version non ROS de la bibliothèque en C ++ est disponible sur le github \cite{miccol_2018}. La bibliothèque est actuellement l’implémentation de ROS BT la plus étoilée disponible dans GitHub.
 			\\
-			Le but de cette bibliothèque est d’offrir un paquetage ROS BT open source gratuit. L'utilisateur définit la structure arborescente et développe le code des leaf nodes pour leur exécution et leur préemption. Les leaf nodes peuvent être implémentés dans le même node ROS que l'arborescence principale ou en tant que node ROS externes. Les node ROS externes peuvent être implémentés à l'aide de C++ ou de Python.
+			Le but de cette bibliothèque est d’offrir un paquetage ROS BT open source gratuit. L'utilisateur définit la structure arborescente et développe le code des leaf nodes pour leur exécution et leur préemption. Les leaf nodes peuvent être implémentés dans le même node ROS que l'arborescence principale ou en tant que nodes ROS externes. Les nodes ROS externes peuvent être implémentés à l'aide de C++ ou de Python.
 			\\
-			Cependant les outils de BT ne sont pas forcement complets car ils sont très récents sur cette technologie dans le domaine de la robotique. Ainsi les outils ne sont pas forcément assez mature sur ce sujet et peuvent comporter des bugs. De plus ils n'ont pas forcement une communauté très développé car les connaissances sont moindres comparé à la communauté bien établie des FSM, cela est bien sûr amené à changer dans le futur.
+			Cependant les outils de BT ne sont pas forcement complets car ils sont très récents sur cette technologie dans le domaine de la robotique. Ainsi les outils ne sont pas forcément assez mature sur ce sujet et peuvent comporter des bugs. De plus ils n'ont pas forcément une communauté très développée car les connaissances sont moindres comparé à la communauté bien établie des FSM, cela est bien sûr amené à changer dans le futur.
 		\subsection{machine learning}
 		Dans la définition originale de l’arbre de comportement, les sélecteurs choisiront l’un de leurs nœuds-enfants à valider. L’algorithme parcourant l'arbre de gauche à droite pour trouver le premier des noeuds pouvant être activé donne aux noeuds de gauche les poids les plus élevés. \cite{Fu2016/08}
 		\\
